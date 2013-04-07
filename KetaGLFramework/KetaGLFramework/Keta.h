@@ -5,3 +5,6 @@
 #include "Game.h"
 
 //Include KetaGraphics files
+
+//Include KetaInput files
+#include "Keyboard.h"

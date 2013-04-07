@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Keta\KetaGraphics">
       <UniqueIdentifier>{d474b307-d395-4554-b153-13669a1c9e49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Keta\KetaInput">
+      <UniqueIdentifier>{5791bd9f-3c86-453b-804c-2a4ec8983093}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -39,6 +42,12 @@
     <ClCompile Include="GameWindow.cpp">
       <Filter>Header Files\Keta\KetaFramework</Filter>
     </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Header Files\Keta\KetaInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Header Files\Keta\KetaInput</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">
@@ -55,6 +64,12 @@
     </ClInclude>
     <ClInclude Include="Rectangle.h">
       <Filter>Header Files\Keta\KetaFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files\Keta\KetaInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files\Keta\KetaInput</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
