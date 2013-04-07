@@ -27,6 +27,18 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Header Files\Keta\KetaFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="LaunchParameters.cpp">
+      <Filter>Header Files\Keta\KetaFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Header Files\Keta\KetaFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>Header Files\Keta\KetaFramework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">
@@ -35,8 +47,14 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files\Keta\KetaFramework</Filter>
     </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Header Files\Keta\KetaFramework</Filter>
+    </ClInclude>
     <ClInclude Include="LaunchParameters.h">
-      <Filter>Header Files\Keta\KetaGraphics</Filter>
+      <Filter>Header Files\Keta\KetaFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Header Files\Keta\KetaFramework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

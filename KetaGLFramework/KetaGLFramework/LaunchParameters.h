@@ -1,4 +1,4 @@
-namespace KetaGraphics
+namespace KetaFramework
 {
 #ifndef LaunchParameters_h
 #define LaunchParameters_h
@@ -10,6 +10,12 @@ namespace KetaGraphics
 		unsigned int MatrixMode;
 		int BackBufferWidth;
 		int BackBufferHeight;
+		int WindowPositionX;
+		int WindowPositionY;
+		bool FullScreen;
+		char* GameModeString;
+
+		LaunchParameters();
 	};
 
 #endif
