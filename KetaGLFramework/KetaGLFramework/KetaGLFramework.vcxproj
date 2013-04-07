@@ -87,6 +87,8 @@
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="SpriteBatch.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="VertexPositionColor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlendState.h" />
@@ -100,6 +102,8 @@
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="SpriteBatch.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="VertexPositionColor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

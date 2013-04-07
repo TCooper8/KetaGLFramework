@@ -11,6 +11,8 @@ namespace KetaGraphics
 		GraphicsDevice();
 
 		void Clear(KetaFramework::Color4 color);
+
+		void DrawCircle(double x, double y, double radius);
 	};
 
 #endif

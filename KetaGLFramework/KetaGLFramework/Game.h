@@ -1,5 +1,6 @@
 #include "LaunchParameters.h"
 #include "GameWindow.h"
+#include "GraphicsDevice.h"
 
 namespace KetaFramework
 {
@@ -12,6 +13,8 @@ namespace KetaFramework
 
 	public:
 	protected:
+		KetaGraphics::GraphicsDevice graphicsDevice;
+
 	private:
 		bool isActive;
 		GameWindow window;	

@@ -72,6 +72,12 @@
     <ClCompile Include="KetaGraphics.cpp">
       <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexPositionColor.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">
@@ -105,6 +111,12 @@
       <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Color4.h">
+      <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexPositionColor.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
       <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

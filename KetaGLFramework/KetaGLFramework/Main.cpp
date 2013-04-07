@@ -10,7 +10,6 @@ using namespace KetaInput;
 class Game1 : public Game
 {
 public:
-	GraphicsDevice device;
 	SpriteBatch spriteBatch;
 
 	Game1()
@@ -35,8 +34,15 @@ public:
 
 	virtual void Draw() override
 	{
-		device.Clear(Color4::White);
+		graphicsDevice.Clear(Color4::White);
 		spriteBatch.Begin(BlendState::AlphaBlend);
+
+		glColor4d(1, 0, 0, .5);
+		graphicsDevice.DrawCircle(100, 100, 50);
+		glColor4d(0, 1, 0, .5);
+		graphicsDevice.DrawCircle(150, 100, 50);
+		glColor4d(0, 0, 1, .5);
+		graphicsDevice.DrawCircle(125, 150, 50);
 
 		Game::Draw();
 		spriteBatch.End();
