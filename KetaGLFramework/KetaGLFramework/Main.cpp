@@ -4,11 +4,15 @@
 
 using namespace std;
 using namespace KetaFramework;
+using namespace KetaGraphics;
 using namespace KetaInput;
 
 class Game1 : public Game
 {
 public:
+	GraphicsDevice device;
+	SpriteBatch spriteBatch;
+
 	Game1()
 		: Game()
 	{
@@ -27,6 +31,15 @@ public:
 		}
 
 		Game::Update();
+	}
+
+	virtual void Draw() override
+	{
+		device.Clear(Color4::White);
+		spriteBatch.Begin(BlendState::AlphaBlend);
+
+		Game::Draw();
+		spriteBatch.End();
 	}
 };
 

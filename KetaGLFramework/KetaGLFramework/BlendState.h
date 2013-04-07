@@ -12,6 +12,7 @@ namespace KetaGraphics
 		static BlendState Additive;
 		static BlendState AlphaBlend;
 
+		BlendState();
 		BlendState(unsigned int sFactor, unsigned int dFactor);
 	};
 

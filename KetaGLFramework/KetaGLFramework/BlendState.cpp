@@ -10,3 +10,8 @@ BlendState BlendState::AlphaBlend = BlendState(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_AL
 BlendState::BlendState(unsigned int sFactor, unsigned int dFactor)
 	: SFactor(sFactor), DFactor(dFactor)
 { }
+
+BlendState::BlendState()
+	: SFactor(GL_ONE), DFactor(GL_ONE)
+{
+}

@@ -55,9 +55,6 @@ void Game::Tick()
 
 void Game::Draw(void)
 {
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	glutSwapBuffers();
 }
 
 void Game::Reshape(int width, int height)

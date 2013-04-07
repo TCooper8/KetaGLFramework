@@ -63,6 +63,15 @@
     <ClCompile Include="BlendState.cpp">
       <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteBatch.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Color4.cpp">
+      <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KetaGraphics.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">
@@ -88,6 +97,15 @@
     </ClInclude>
     <ClInclude Include="BlendState.h">
       <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteBatch.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsDevice.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Color4.h">
+      <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
