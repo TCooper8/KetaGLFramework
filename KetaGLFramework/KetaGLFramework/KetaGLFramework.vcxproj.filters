@@ -25,22 +25,22 @@
     <Filter Include="Header Files\Keta\KetaInput">
       <UniqueIdentifier>{5791bd9f-3c86-453b-804c-2a4ec8983093}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Keta\KetaFramework\Source Files">
+      <UniqueIdentifier>{adb71dbc-57c8-44d4-8c3e-8747785f89d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaFramework\Header Files">
+      <UniqueIdentifier>{7e6bad1e-2e64-4346-a8c9-f7ccf6fbfaea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaGraphics\Header Files">
+      <UniqueIdentifier>{a0c9d1b0-ee9f-4f06-aa41-ee3e900f5312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaGraphics\Source Files">
+      <UniqueIdentifier>{3ec3169e-1134-41d8-90b4-d848d8d31bf4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="LaunchParameters.cpp">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
     </ClCompile>
     <ClCompile Include="Keyboard.cpp">
       <Filter>Header Files\Keta\KetaInput</Filter>
@@ -48,28 +48,46 @@
     <ClCompile Include="Mouse.cpp">
       <Filter>Header Files\Keta\KetaInput</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LaunchParameters.cpp">
+      <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BlendState.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">
       <Filter>Header Files\Keta</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="GameWindow.h">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="LaunchParameters.h">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Header Files\Keta\KetaFramework</Filter>
     </ClInclude>
     <ClInclude Include="Keyboard.h">
       <Filter>Header Files\Keta\KetaInput</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
       <Filter>Header Files\Keta\KetaInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LaunchParameters.h">
+      <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlendState.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
