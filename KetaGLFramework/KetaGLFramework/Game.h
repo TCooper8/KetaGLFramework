@@ -26,7 +26,7 @@ namespace KetaFramework
 
 		Game();
 
-		void Initialize(int argc, char** argv);
+		virtual void Initialize(int argc, char** argv);
 		virtual void Run() final;
 		virtual void Tick() final;
 

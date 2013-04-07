@@ -8,3 +8,4 @@
 
 //Include KetaInput files
 #include "Keyboard.h"
+#include "Mouse.h"
