@@ -7,6 +7,8 @@ using namespace KetaFramework;
 using namespace KetaGraphics;
 using namespace KetaInput;
 
+double theta = 0;
+
 class Game1 : public Game
 {
 public:
@@ -37,12 +39,14 @@ public:
 		graphicsDevice.Clear(Color4::White);
 		spriteBatch.Begin(BlendState::AlphaBlend);
 
-		glColor4d(1, 0, 0, .5);
-		graphicsDevice.DrawCircle(100, 100, 50);
-		glColor4d(0, 1, 0, .5);
-		graphicsDevice.DrawCircle(150, 100, 50);
-		glColor4d(0, 0, 1, .5);
-		graphicsDevice.DrawCircle(125, 150, 50);
+		glColor3d(1, 0, 0);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
+		glRotated(theta, 0, 1, 0);
+		glutWireCube(5);
+		
+		theta += 0.01;
 
 		Game::Draw();
 		spriteBatch.End();
@@ -53,6 +57,10 @@ int main(int argc, char** argv)
 {
 	Game1 game1 = Game1();
 	game1.Initialize(argc, argv);
+
+	glLoadIdentity();
+	glOrtho(-4, 4, -4, 4, -4, 4);
+
 	game1.Run();
 
 	return 0;

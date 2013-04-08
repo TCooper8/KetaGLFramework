@@ -68,7 +68,8 @@ void Game::Reshape(int width, int height)
 
 	glMatrixMode(Parameters.MatrixMode);
 	glLoadIdentity();
-	gluOrtho2D(0, width, 0, height);
+	//gluOrtho2D(0, width, 0, height);
+	glOrtho(-10, 10, -10, 10, -10, 50);
 }
 
 void Game::Update()
