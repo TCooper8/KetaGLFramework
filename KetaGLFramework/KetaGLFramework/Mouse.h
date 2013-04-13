@@ -11,7 +11,13 @@ namespace KetaInput
 		int Button;
 		int State;
 
+		MouseState();
+		MouseState(MouseState &state);
 		MouseState(int button, int state, int x, int y);
+
+		bool operator==(const MouseState &state) const;
+		bool operator!=(const MouseState &state) const;
+		MouseState &operator=(const MouseState &state);
 	};
 	
 	//Allows retrieval of position and button clicks from a mouse input device.
@@ -23,6 +29,8 @@ namespace KetaInput
 
 		//Called when OpenGL invokes its MouseFunc.
 		static void MouseCallback(int button, int state, int x, int y);
+		//Called when OpenGL invokes its PassiveMotionFunc.
+		static void MouseMotionCallback(int x, int y);
 	};
 
 #endif

@@ -14,6 +14,8 @@ class Game1 : public Game
 public:
 	SpriteBatch spriteBatch;
 
+	MouseState currentMouse, previousMouse;
+
 	Game1()
 		: Game()
 	{
@@ -26,10 +28,14 @@ public:
 
 	virtual void Update() override
 	{
+		previousMouse = currentMouse;
+		currentMouse = Mouse::CurrentState;
+
 		if(Keyboard::CurrentState.Char == 27)
-		{
 			exit(0);
-		}
+
+		if (previousMouse.State == 0 && currentMouse.State == 1)
+			cout << 5 << endl;
 
 		Game::Update();
 	}

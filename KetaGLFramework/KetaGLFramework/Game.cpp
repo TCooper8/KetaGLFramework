@@ -35,6 +35,7 @@ namespace KetaFramework
 		glutKeyboardFunc(KetaInput::Keyboard::KeyboardCallback);
 		glutReshapeFunc(ReshapeCallback);
 		glutMouseFunc(KetaInput::Mouse::MouseCallback);
+		glutPassiveMotionFunc(KetaInput::Mouse::MouseMotionCallback);
 
 		glClearColor(1, 1, 1, 0);
 	}
