@@ -29,8 +29,39 @@ namespace KetaFramework
 		Vector3();
 		Vector3(Vector3 &vector);
 		Vector3(double value);
-		Vector3(double xy, double z);
+		Vector3(double x, double y);
 		Vector3(double x, double y, double z);
+		
+		double Sum() const;
+
+		static Vector3 CatmullRom(Vector3 &value1, Vector3 &value2, Vector3 &value3, Vector3 &value4, double amount);
+		static Vector3 Clamp(Vector3 &vector, Vector3 &min, Vector3 &max);
+		static Vector3 Cross(Vector3 &vectorA, Vector3 &vectorB);
+		static double Distance(Vector3 &vectorA, Vector3 &vectorB);
+		static double DistanceSquared(Vector3 &vectorA, Vector3 &vectorB);
+		static double Dot(Vector3 &vectorA, Vector3 &vectorB);
+
+		Vector3 operator*(Vector3 &vector) const;
+		Vector3 operator*(double scaleFactor) const;
+		Vector3 operator+(Vector3 &vector) const;
+		Vector3 operator-() const;
+		Vector3 operator-(Vector3 &vector) const;
+		Vector3 operator/(Vector3 &vector) const;
+		Vector3 operator/(double divisor) const;
+		bool operator<(Vector3 &vector) const;
+		bool operator<=(Vector3 &vector) const;
+		bool operator==(Vector3 &vector) const;
+		bool operator!=(Vector3 &vector) const;
+		bool operator>(Vector3 &vector) const;
+		bool operator>=(Vector3 &vector) const;
+		
+		Vector3 &operator=(Vector3 &vector);
+		Vector3 &operator*=(Vector3 &vector);
+		Vector3 &operator*=(double scaleFactor);
+		Vector3 &operator+=(Vector3 &vector);
+		Vector3 &operator-=(Vector3 &vector);
+		Vector3 &operator/=(Vector3 &vector);
+		Vector3 &operator/=(double divisor);
 	};
 
 #endif
