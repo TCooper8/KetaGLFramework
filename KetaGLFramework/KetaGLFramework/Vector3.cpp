@@ -34,6 +34,21 @@ namespace KetaFramework
 		return X + Y + Z;
 	}
 
+	double Vector3::Length() const
+	{
+		return std::sqrt(this->LengthSquared());
+	}
+
+	double Vector3::LengthSquared() const
+	{
+		return std::pow(X, 2) + std::pow(Y, 2) + std::pow(Z, 2);
+	}
+
+	void Vector3::Normalize()
+	{
+		*this = *this / this->Length();
+	}
+
 	Vector3 Vector3::CatmullRom(Vector3 &value1, Vector3 &value2, Vector3 &value3, Vector3 &value4, double amount)
 	{
 		return (
@@ -45,16 +60,7 @@ namespace KetaFramework
 
 	Vector3 Vector3::Clamp(Vector3 &vector, Vector3 &min, Vector3 &max)
 	{
-		double x = (vector.X > max.X)? max.X : vector.X;
-		x = (vector.X > min.X)? vector.X : min.X;
-
-		double y = (vector.Y > max.Y)? max.Y : vector.Y;
-		y = (vector.Y > min.Y)? vector.Y : min.Y;
-
-		double z = (vector.Z > max.Y)? max.Z : vector.Z;
-		z = (vector.Z > min.Z)? vector.Z : min.Z;
-
-		return Vector3(x, y, z);
+		return Vector3::Min(Vector3::Max(vector, max), min);
 	}
 
 	Vector3 Vector3::Cross(Vector3 &vectorA, Vector3 &vectorB)
@@ -84,6 +90,50 @@ namespace KetaFramework
 			vectorA.X * vectorB.X + 
 			vectorA.Y * vectorB.Y +
 			vectorA.Z * vectorB.Z;
+	}
+
+	Vector3 Vector3::Lerp(Vector3 &vectorA, Vector3 &vectorB, double amount)
+	{
+		return (vectorA * amount + vectorB * (1.0 - amount));
+	}
+
+	Vector3 Vector3::Max(Vector3 &vector, Vector3 &max)
+	{
+		double x = (vector.X > max.X)? max.X : vector.X;
+		double y = (vector.Y > max.Y)? max.Y : vector.Y;
+		double z = (vector.Z > max.Z)? max.Z : vector.Z;
+
+		return Vector3(x, y, z);
+	}
+
+	Vector3 Vector3::Min(Vector3 &vector, Vector3 &min)
+	{
+		double x = (vector.X < min.X)? min.X : vector.X;
+		double y = (vector.Y < min.Y)? min.Y : vector.Y;
+		double z = (vector.Z < min.Z)? min.Z : vector.Z;
+
+		return Vector3(x, y, z);
+	}
+
+	Vector3 Vector3::Negate(Vector3 &vector)
+	{
+		return -vector;
+	}
+
+	Vector3 Vector3::Reflect(Vector3 &vector, Vector3 &normal)
+	{
+		return vector - normal * 2.0 * Vector3::Dot(vector, normal);
+	}
+
+	Vector3 Vector3::SmoothStep(Vector3 &vectorA, Vector3 &vectorB, double amount)
+	{
+		//Clamp x to be within the range of [0, 1]
+		amount = (amount > 1.0)? 1.0 : amount;
+		amount = (amount < 0)? 0 : amount;
+
+		amount = std::pow(amount, 3) * (amount * (amount * 6 - 15) + 10);
+
+		return vectorA * (1.0 - amount) + vectorB * amount;
 	}
 
 	Vector3 Vector3::operator*(Vector3 &vector) const
