@@ -36,7 +36,7 @@ public:
 
 	virtual void Draw() override
 	{
-		graphicsDevice.Clear(Color4::White);
+		GetGraphicsDevice().Clear(Color4::White);
 		spriteBatch.Begin(BlendState::AlphaBlend);
 
 		glColor3d(1, 0, 0);

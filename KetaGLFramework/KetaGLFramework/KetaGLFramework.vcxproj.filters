@@ -37,16 +37,16 @@
     <Filter Include="Header Files\Keta\KetaGraphics\Source Files">
       <UniqueIdentifier>{3ec3169e-1134-41d8-90b4-d848d8d31bf4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Keta\KetaInput\Source Files">
+      <UniqueIdentifier>{09282249-ade0-4b1e-8844-7aef3f9007fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaInput\Header Files">
+      <UniqueIdentifier>{c84a0deb-0c0a-4165-9d8b-3f9545cee00b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Keyboard.cpp">
-      <Filter>Header Files\Keta\KetaInput</Filter>
-    </ClCompile>
-    <ClCompile Include="Mouse.cpp">
-      <Filter>Header Files\Keta\KetaInput</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
@@ -78,16 +78,16 @@
     <ClCompile Include="VertexPositionColor.cpp">
       <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Header Files\Keta\KetaInput\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Header Files\Keta\KetaInput\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">
       <Filter>Header Files\Keta</Filter>
-    </ClInclude>
-    <ClInclude Include="Keyboard.h">
-      <Filter>Header Files\Keta\KetaInput</Filter>
-    </ClInclude>
-    <ClInclude Include="Mouse.h">
-      <Filter>Header Files\Keta\KetaInput</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
@@ -118,6 +118,12 @@
     </ClInclude>
     <ClInclude Include="Vector3.h">
       <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files\Keta\KetaInput\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files\Keta\KetaInput\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
