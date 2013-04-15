@@ -1,6 +1,7 @@
 //Include KetaFramework files
 #include "Rectangle.h"
 #include "Color4.h"
+#include "Vector3.h"
 #include "GameWindow.h"
 #include "LaunchParameters.h"
 #include "Game.h"

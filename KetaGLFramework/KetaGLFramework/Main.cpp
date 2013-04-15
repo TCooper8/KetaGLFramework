@@ -34,8 +34,9 @@ public:
 		if(Keyboard::CurrentState.Char == 27)
 			exit(0);
 
-		if (previousMouse.State == 0 && currentMouse.State == 1)
-			cout << 5 << endl;
+		if (previousMouse.Button == MouseState::MouseLeft && currentMouse.Button == MouseState::MouseLeft)
+			if (previousMouse.State == MouseState::Down && currentMouse.State == MouseState::Up)
+				cout << 5 << endl;
 
 		Game::Update();
 	}

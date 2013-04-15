@@ -3,6 +3,11 @@
 
 namespace KetaInput
 {
+	int MouseState::MouseLeft = GLUT_LEFT_BUTTON;
+	int MouseState::MouseRight = GLUT_RIGHT_BUTTON;
+	int MouseState::Up = GLUT_UP;
+	int MouseState::Down = GLUT_DOWN;
+
 	MouseState::MouseState()
 		: X(0), Y(0), Button(0), State(GLUT_UP)
 	{ }

@@ -11,6 +11,11 @@ namespace KetaInput
 		int Button;
 		int State;
 
+		static int MouseLeft;
+		static int MouseRight;
+		static int Up;
+		static int Down;
+
 		MouseState();
 		MouseState(MouseState &state);
 		MouseState(int button, int state, int x, int y);
