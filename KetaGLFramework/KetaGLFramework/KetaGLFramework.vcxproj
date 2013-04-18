@@ -98,6 +98,7 @@
     <ClInclude Include="GraphicsDevice.h" />
     <ClInclude Include="Keta.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Keys.h" />
     <ClInclude Include="LaunchParameters.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Rectangle.h" />

@@ -21,6 +21,16 @@ namespace KetaFramework
 		return this->clientBounds;
 	}
 
+	int GameWindow::GetHandle() const
+	{
+		return this->handle;
+	}
+
+	void GameWindow::SetHandle(int handle)
+	{
+		this->handle = handle;
+	}
+
 	char* &GameWindow::GetTitle()
 	{
 		return this->title;

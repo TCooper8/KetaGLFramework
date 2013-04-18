@@ -8,8 +8,9 @@ namespace KetaFramework
 	//The system window associated with a Game.
 	class GameWindow
 	{
-	protected:
+	private:
 		Rectangle clientBounds;
+		int handle;
 		char* title;
 
 	public:
@@ -25,6 +26,10 @@ namespace KetaFramework
 
 		//The screen dimensions of the game window's client rectangle.
 		Rectangle &GetClientBounds();
+		//Gets the current window handle.
+		int GetHandle() const;
+		//Sets the current window handle.
+		void SetHandle(int handle);
 		//Gets the title of the system window.
 		char* &GetTitle();
 		//Sets the title of the system window.

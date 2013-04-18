@@ -6,8 +6,6 @@ namespace KetaInput
 	class MouseState
 	{
 	public:
-		int X;
-		int Y;
 		int Button;
 		int State;
 
@@ -18,7 +16,7 @@ namespace KetaInput
 
 		MouseState();
 		MouseState(MouseState &state);
-		MouseState(int button, int state, int x, int y);
+		MouseState(int button, int state);
 
 		bool operator==(const MouseState &state) const;
 		bool operator!=(const MouseState &state) const;
@@ -28,9 +26,18 @@ namespace KetaInput
 	//Allows retrieval of position and button clicks from a mouse input device.
 	class Mouse sealed
 	{
-	public:
+	private:
 		//Represents the current state of the mouse.
-		static MouseState CurrentState;
+		static MouseState currentState;
+		//Represents the current x-position of the mouse.
+		static int mouseX;
+		//Represents the current y-position of the mouse.
+		static int mouseY;
+
+	public:
+		static MouseState GetState();
+		static int GetX();
+		static int GetY();
 
 		//Called when OpenGL invokes its MouseFunc.
 		static void MouseCallback(int button, int state, int x, int y);

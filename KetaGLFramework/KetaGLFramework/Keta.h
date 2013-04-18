@@ -1,3 +1,9 @@
+
+//Include KetaInput files
+#include "Keyboard.h"
+#include "Keys.h"
+#include "Mouse.h"
+
 //Include KetaFramework files
 #include "Rectangle.h"
 #include "Color4.h"
@@ -10,7 +16,3 @@
 #include "BlendState.h"
 #include "GraphicsDevice.h"
 #include "SpriteBatch.h"
-
-//Include KetaInput files
-#include "Keyboard.h"
-#include "Mouse.h"

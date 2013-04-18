@@ -125,5 +125,8 @@
     <ClInclude Include="Mouse.h">
       <Filter>Header Files\Keta\KetaInput\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Keys.h">
+      <Filter>Header Files\Keta\KetaInput\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

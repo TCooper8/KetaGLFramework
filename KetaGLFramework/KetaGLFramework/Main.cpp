@@ -1,6 +1,6 @@
 #include <iostream>
-#include <glut.h>
 #include "Keta.h"
+#include <glut.h>
 
 using namespace std;
 using namespace KetaFramework;
@@ -13,7 +13,6 @@ class Game1 : public Game
 {
 public:
 	SpriteBatch spriteBatch;
-
 	MouseState currentMouse, previousMouse;
 
 	Game1()
@@ -29,9 +28,9 @@ public:
 	virtual void Update() override
 	{
 		previousMouse = currentMouse;
-		currentMouse = Mouse::CurrentState;
+		currentMouse = Mouse::GetState();
 
-		if(Keyboard::CurrentState.Char == 27)
+		if(Keyboard::GetState().IsKeyDown(Keys::Escape))
 			exit(0);
 
 		if (previousMouse.Button == MouseState::MouseLeft && currentMouse.Button == MouseState::MouseLeft)

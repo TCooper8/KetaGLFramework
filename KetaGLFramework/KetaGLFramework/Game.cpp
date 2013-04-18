@@ -29,10 +29,11 @@ namespace KetaFramework
 			glutEnterGameMode();
 		}
 		else
-			glutCreateWindow(this->window.Title);
+			this->window.SetHandle(glutCreateWindow(this->window.Title));
 
 		glutDisplayFunc(DisplayCallback);
 		glutKeyboardFunc(KetaInput::Keyboard::KeyboardCallback);
+		glutKeyboardUpFunc(KetaInput::Keyboard::KeyboardUpCallback);
 		glutReshapeFunc(ReshapeCallback);
 		glutMouseFunc(KetaInput::Mouse::MouseCallback);
 		glutPassiveMotionFunc(KetaInput::Mouse::MouseMotionCallback);
