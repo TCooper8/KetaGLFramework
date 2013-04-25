@@ -143,5 +143,11 @@
     <ClInclude Include="Matrix.h">
       <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PresentationParameters.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SurfaceFormat.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -15,6 +15,8 @@
 
 //Include KetaGraphics files
 #include "BlendState.h"
+#include "PresentationParameters.h"
+#include "SurfaceFormat.h"
 #include "GraphicsDevice.h"
 #include "SpriteBatch.h"
 #include "VertexBuffer.h"

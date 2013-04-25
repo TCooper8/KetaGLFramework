@@ -20,6 +20,18 @@ public:
 	Game1()
 		: Game()
 	{
+		Matrix m = Matrix::CreateLookAt(Vector3(1, 1, 1), Vector3(0), Vector3(0, 1, 0));
+
+		cout << '[';
+		for (int i = 0; i < Matrix::Width; i++)
+		{
+			for (int j = 0; j < Matrix::Height; j++)
+			{
+				cout << m[i + j * Matrix::Height] << ',';
+			}
+			cout << endl;
+		}
+		cout << ']' << endl;
 	}
 
 	virtual void Initialize(int argc, char** argv) override
@@ -33,19 +45,6 @@ public:
 		vertices[3] = VertexPositionColor(Vector3(1, -1) * 5, Color4::Green);
 
 		buffer = VertexBuffer(vertices, 4, GL_QUADS);
-
-		Matrix m = Matrix::CreateLookAt(Vector3(0, 0, -10), Vector3(0), Vector3::UnitY);
-
-		cout << '[';
-		for (int x = 0; x < Matrix::Width; x++)
-		{
-			for (int y = 0; y < Matrix::Height; y++)
-			{
-				cout << m.Element[x][y] << ',';
-			}
-			cout << endl;
-		}
-		cout << ']' << endl;
 	}
 
 	virtual void Update() override
@@ -60,6 +59,8 @@ public:
 			if (previousMouse.State == MouseState::Down && currentMouse.State == MouseState::Up)
 				cout << 5 << endl;
 
+		cout << SurfaceFormat::Color;
+
 		Game::Update();
 	}
 
@@ -69,8 +70,13 @@ public:
 		spriteBatch.Begin(BlendState::AlphaBlend);
 
 		glMatrixMode(GL_MODELVIEW);  
-		glLoadIdentity();
-		gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
+
+		Matrix m = Matrix::CreateLookAt(Vector3(-1), Vector3(0, 0, 0), Vector3(0, 1, 0));
+		m.glPush();
+
+		//glLoadIdentity();
+		//gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
+
 		glRotated(theta, 0, 1, 0);
 
 		this->graphicsDevice.DrawPrimitives(buffer.GetDeclaration(), buffer.GetVertices(), buffer.GetCount());
@@ -86,8 +92,8 @@ int main(int argc, char** argv)
 	Game1 game1 = Game1();
 	game1.Initialize(argc, argv);
 
-	glLoadIdentity();
-	glOrtho(-4, 4, -4, 4, -4, 4);
+	//glLoadIdentity();
+	//glOrtho(-4, 4, -4, 4, -4, 4);
 
 	game1.Run();
 

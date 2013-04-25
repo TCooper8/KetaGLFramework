@@ -105,8 +105,10 @@
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="ModelBone.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="PresentationParameters.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="SpriteBatch.h" />
+    <ClInclude Include="SurfaceFormat.h" />
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexPositionColor.h" />

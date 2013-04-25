@@ -10,7 +10,7 @@ namespace KetaFramework
 	public:
 		static const int Width = 4;
 		static const int Height = 4;
-		double Element[Width][Height];
+		double Element[Width * Height];
 
 	public:
 		static const Matrix Identity;
@@ -23,10 +23,14 @@ namespace KetaFramework
 			double m31, double m32, double m33, double m34,
 			double m41, double m42, double m43, double m44);
 
+		void glPush() const;
+
 		static Matrix CreateLookAt(const Vector3 &cameraPosition, const Vector3 &cameraTarget, const Vector3 &cameraUpVector);
 
 		Matrix operator*(const Matrix &matrix) const;
 		void operator=(const Matrix &matrix);
+		double &operator[](int i);
+		const double &operator[](int i) const;
 	};
 
 #endif
