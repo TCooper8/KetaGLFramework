@@ -1,4 +1,5 @@
 #include "GameWindow.h"
+#include <cstring>
 
 namespace KetaFramework
 {
@@ -6,9 +7,14 @@ namespace KetaFramework
 		: AllowUserResizing(true), clientBounds(0, 0, 700, 500), title("Keta Game")
 	{ }
 
-	GameWindow::GameWindow(GameWindow &window)
-		: AllowUserResizing(window.AllowUserResizing), clientBounds(window.ClientBounds), title(window.Title)
-	{ }
+	GameWindow::GameWindow(const GameWindow &window)
+		: AllowUserResizing(window.AllowUserResizing), clientBounds(window.GetClientBounds())
+	{
+		const int len = std::strlen(window.GetTitle());
+		this->title = new char[len];
+
+		strcpy(this->title, window.GetTitle());
+	}
 
 	void GameWindow::Resize(int width, int height)
 	{
@@ -16,7 +22,7 @@ namespace KetaFramework
 		this->clientBounds.Height = height;
 	}
 
-	Rectangle &GameWindow::GetClientBounds()
+	const Rectangle &GameWindow::GetClientBounds() const
 	{
 		return this->clientBounds;
 	}
@@ -31,7 +37,7 @@ namespace KetaFramework
 		this->handle = handle;
 	}
 
-	char* &GameWindow::GetTitle()
+	const char* GameWindow::GetTitle() const
 	{
 		return this->title;
 	}

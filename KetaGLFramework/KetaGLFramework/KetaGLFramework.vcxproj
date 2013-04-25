@@ -80,14 +80,16 @@
     <ClCompile Include="Color4.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWindow.cpp" />
-    <ClCompile Include="KetaGraphics.cpp" />
+    <ClCompile Include="GraphicsDevice.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="LaunchParameters.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="SpriteBatch.cpp" />
     <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexPositionColor.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -100,10 +102,13 @@
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Keys.h" />
     <ClInclude Include="LaunchParameters.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="ModelBone.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="SpriteBatch.h" />
     <ClInclude Include="Vector3.h" />
+    <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexPositionColor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

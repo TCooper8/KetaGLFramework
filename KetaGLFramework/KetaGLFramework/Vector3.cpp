@@ -3,17 +3,17 @@
 
 namespace KetaFramework
 {
-	Vector3 Vector3::One = Vector3(1);
-	Vector3 Vector3::UnitX = Vector3(1, 0, 0);
-	Vector3 Vector3::UnitY = Vector3(0, 1, 0);
-	Vector3 Vector3::UnitZ = Vector3(0, 0, 1);
-	Vector3 Vector3::Zero = Vector3(0);
+	Vector3 const Vector3::One = Vector3(1);
+	Vector3 const Vector3::UnitX = Vector3(1, 0, 0);
+	Vector3 const Vector3::UnitY = Vector3(0, 1, 0);
+	Vector3 const Vector3::UnitZ = Vector3(0, 0, 1);
+	Vector3 const Vector3::Zero = Vector3(0);
 
 	Vector3::Vector3()
 		: X(0), Y(0), Z(0)
 	{ }
 
-	Vector3::Vector3(Vector3 &vector)
+	Vector3::Vector3(const Vector3 &vector)
 		: X(vector.X), Y(vector.Y), Z(vector.Z)
 	{ }
 
@@ -49,7 +49,7 @@ namespace KetaFramework
 		*this = *this / this->Length();
 	}
 
-	Vector3 Vector3::CatmullRom(Vector3 &value1, Vector3 &value2, Vector3 &value3, Vector3 &value4, double amount)
+	Vector3 Vector3::CatmullRom(const Vector3 &value1, const Vector3 &value2, const Vector3 &value3, const Vector3 &value4, double amount)
 	{
 		return (
 			(value2 * 2) +
@@ -58,12 +58,12 @@ namespace KetaFramework
 			(-value1 + value2 * 3 - value4 * value3 * 3) * std::pow(amount, 3)) * 0.5;
 	}
 
-	Vector3 Vector3::Clamp(Vector3 &vector, Vector3 &min, Vector3 &max)
+	Vector3 Vector3::Clamp(const Vector3 &vector, const Vector3 &min, const Vector3 &max)
 	{
 		return Vector3::Min(Vector3::Max(vector, max), min);
 	}
 
-	Vector3 Vector3::Cross(Vector3 &vectorA, Vector3 &vectorB)
+	Vector3 Vector3::Cross(const Vector3 &vectorA, const Vector3 &vectorB)
 	{
 		return Vector3(
 			vectorA.Y * vectorB.Z - vectorA.Z * vectorB.Y,
@@ -71,12 +71,12 @@ namespace KetaFramework
 			vectorA.Z * vectorB.Y - vectorA.Y * vectorB.X);
 	}
 
-	double Vector3::Distance(Vector3 &vectorA, Vector3 &vectorB)
+	double Vector3::Distance(const Vector3 &vectorA, const Vector3 &vectorB)
 	{
 		return std::sqrt(Vector3::DistanceSquared(vectorA, vectorB));
 	}
 
-	double Vector3::DistanceSquared(Vector3 &vectorA, Vector3 &vectorB)
+	double Vector3::DistanceSquared(const Vector3 &vectorA, const Vector3 &vectorB)
 	{
 		return 
 			std::pow(vectorB.X - vectorA.X, 2) + 
@@ -84,7 +84,7 @@ namespace KetaFramework
 			std::pow(vectorB.Z - vectorA.Z, 2);
 	}
 
-	double Vector3::Dot(Vector3 &vectorA, Vector3 &vectorB)
+	double Vector3::Dot(const Vector3 &vectorA, const Vector3 &vectorB)
 	{
 		return 
 			vectorA.X * vectorB.X + 
@@ -92,12 +92,12 @@ namespace KetaFramework
 			vectorA.Z * vectorB.Z;
 	}
 
-	Vector3 Vector3::Lerp(Vector3 &vectorA, Vector3 &vectorB, double amount)
+	Vector3 Vector3::Lerp(const Vector3 &vectorA, const Vector3 &vectorB, double amount)
 	{
 		return (vectorA * amount + vectorB * (1.0 - amount));
 	}
 
-	Vector3 Vector3::Max(Vector3 &vector, Vector3 &max)
+	Vector3 Vector3::Max(const Vector3 &vector, const Vector3 &max)
 	{
 		double x = (vector.X > max.X)? max.X : vector.X;
 		double y = (vector.Y > max.Y)? max.Y : vector.Y;
@@ -106,7 +106,7 @@ namespace KetaFramework
 		return Vector3(x, y, z);
 	}
 
-	Vector3 Vector3::Min(Vector3 &vector, Vector3 &min)
+	Vector3 Vector3::Min(const Vector3 &vector, const Vector3 &min)
 	{
 		double x = (vector.X < min.X)? min.X : vector.X;
 		double y = (vector.Y < min.Y)? min.Y : vector.Y;
@@ -115,17 +115,17 @@ namespace KetaFramework
 		return Vector3(x, y, z);
 	}
 
-	Vector3 Vector3::Negate(Vector3 &vector)
+	Vector3 Vector3::Negate(const Vector3 &vector)
 	{
 		return -vector;
 	}
 
-	Vector3 Vector3::Reflect(Vector3 &vector, Vector3 &normal)
+	Vector3 Vector3::Reflect(const Vector3 &vector, const Vector3 &normal)
 	{
 		return vector - normal * 2.0 * Vector3::Dot(vector, normal);
 	}
 
-	Vector3 Vector3::SmoothStep(Vector3 &vectorA, Vector3 &vectorB, double amount)
+	Vector3 Vector3::SmoothStep(const Vector3 &vectorA, const Vector3 &vectorB, double amount)
 	{
 		//Clamp x to be within the range of [0, 1]
 		amount = (amount > 1.0)? 1.0 : amount;
@@ -136,7 +136,7 @@ namespace KetaFramework
 		return vectorA * (1.0 - amount) + vectorB * amount;
 	}
 
-	Vector3 Vector3::operator*(Vector3 &vector) const
+	Vector3 Vector3::operator*(const Vector3 &vector) const
 	{
 		return Vector3(X * vector.X, Y * vector.Y, Z * vector.Z);
 	}
@@ -146,7 +146,7 @@ namespace KetaFramework
 		return *this * Vector3(scaleFactor);
 	}
 
-	Vector3 Vector3::operator+(Vector3 &vector) const
+	Vector3 Vector3::operator+(const Vector3 &vector) const
 	{
 		return Vector3(X + vector.X, Y + vector.Y, Z + vector.Z);
 	}
@@ -156,12 +156,12 @@ namespace KetaFramework
 		return Vector3(-X, -Y, -Z);
 	}
 
-	Vector3 Vector3::operator-(Vector3 &vector) const
+	Vector3 Vector3::operator-(const Vector3 &vector) const
 	{
 		return Vector3(X - vector.X, Y - vector.Y, Z - vector.Z);
 	}
 
-	Vector3 Vector3::operator/(Vector3 &vector) const
+	Vector3 Vector3::operator/(const Vector3 &vector) const
 	{
 		double x = (vector.X)? X / vector.X : 0;
 		double y = (vector.Y)? Y / vector.Y : 0;
@@ -177,37 +177,37 @@ namespace KetaFramework
 		return Vector3(0);
 	}
 
-	bool Vector3::operator<(Vector3 &vector) const
+	bool Vector3::operator<(const Vector3 &vector) const
 	{
 		return (this->Sum() < vector.Sum());
 	}
 
-	bool Vector3::operator<=(Vector3 &vector) const
+	bool Vector3::operator<=(const Vector3 &vector) const
 	{
 		return (this->Sum() <= vector.Sum());
 	}
 
-	bool Vector3::operator==(Vector3 &vector) const
+	bool Vector3::operator==(const Vector3 &vector) const
 	{
 		return (this->Sum() == vector.Sum());
 	}
 
-	bool Vector3::operator!=(Vector3 &vector) const
+	bool Vector3::operator!=(const Vector3 &vector) const
 	{
 		return !(*this == vector);
 	}
 
-	bool Vector3::operator>(Vector3 &vector) const
+	bool Vector3::operator>(const Vector3 &vector) const
 	{
 		return !(*this <= vector);
 	}
 
-	bool Vector3::operator>=(Vector3 &vector) const
+	bool Vector3::operator>=(const Vector3 &vector) const
 	{
 		return !(*this < vector);
 	}
 
-	Vector3 &Vector3::operator=(Vector3 &vector)
+	Vector3 &Vector3::operator=(const Vector3 &vector)
 	{
 		X = vector.X;
 		Y = vector.Y;
@@ -216,7 +216,7 @@ namespace KetaFramework
 		return *this;
 	}
 
-	Vector3 &Vector3::operator*=(Vector3 &vector)
+	Vector3 &Vector3::operator*=(const Vector3 &vector)
 	{
 		*this = *this * vector;
 		return *this;
@@ -228,19 +228,19 @@ namespace KetaFramework
 		return *this;
 	}
 
-	Vector3 &Vector3::operator+=(Vector3 &vector)
+	Vector3 &Vector3::operator+=(const Vector3 &vector)
 	{
 		*this = *this + vector;
 		return *this;
 	}
 
-	Vector3 &Vector3::operator-=(Vector3 &vector)
+	Vector3 &Vector3::operator-=(const Vector3 &vector)
 	{
 		*this = *this - vector;
 		return *this;
 	}
 
-	Vector3 &Vector3::operator/=(Vector3 &vector)
+	Vector3 &Vector3::operator/=(const Vector3 &vector)
 	{
 		*this = *this / vector;
 		return *this;

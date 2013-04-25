@@ -1,6 +1,9 @@
+
+#include <iostream>
 #include <cmath>
 #include <glut.h>
 #include "GraphicsDevice.h"
+
 
 using namespace KetaFramework;
 
@@ -17,6 +20,7 @@ namespace KetaGraphics
 
 	void GraphicsDevice::DrawCircle(double x, double y, double radius)
 	{
+		glColor3d(.5, .5, .5);
 		glBegin(GL_POLYGON);
 		for (int i = 0; i < 32; i++)
 		{
@@ -25,6 +29,19 @@ namespace KetaGraphics
 			double yf = y + sin(theta) * radius;
 			glVertex2d(xf, yf);
 		}
+		glEnd();
+	}
+
+	void GraphicsDevice::DrawPrimitives(int declaration, const VertexPositionColor* vertices, int vertexCount)
+	{
+		glBegin(declaration);
+
+		for (int i = 0; i < vertexCount; i++)
+		{
+			glColor4d(vertices[i].Color.R, vertices[i].Color.G, vertices[i].Color.B, 1);
+			glVertex3d(vertices[i].Position.X, vertices[i].Position.Y, vertices[i].Position.Z);
+		}
+
 		glEnd();
 	}
 }

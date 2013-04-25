@@ -17,26 +17,26 @@ namespace KetaFramework
 		double R;
 		
 		//System defined color.
-		static Color4 Black;
-		static Color4 Blue;
-		static Color4 Green;
-		static Color4 Red;
-		static Color4 White;
+		static const Color4 Black;
+		static const Color4 Blue;
+		static const Color4 Green;
+		static const Color4 Red;
+		static const Color4 White;
 
 		//Represents a color that is null.
-		static Color4 Empty;
+		static const Color4 Empty;
 
 		//Creates a new instance of class Color4
 		Color4();
-		Color4(Color4 &color);
+		Color4(const Color4 &color);
 		Color4(double value);
 		Color4(double rgb, double a);
 		Color4(double r, double g, double b, double a);
 
-		bool operator==(Color4 &color);
-		bool operator!=(Color4 &color);
+		bool operator==(const Color4 &color);
+		bool operator!=(const Color4 &color);
 
-		Color4 &operator=(Color4 &color);
+		Color4 &operator=(const Color4 &color);
 	};
 
 #endif

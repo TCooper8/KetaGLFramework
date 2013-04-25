@@ -17,8 +17,10 @@ namespace KetaGraphics
 
 		//Overloaded. Initializes a new instance of VertexPositionColor.d
 		VertexPositionColor();
-		VertexPositionColor(VertexPositionColor &vertex);
-		VertexPositionColor(KetaFramework::Vector3 position, KetaFramework::Color4 color);
+		VertexPositionColor(const VertexPositionColor &vertex);
+		VertexPositionColor(const KetaFramework::Vector3 position, const KetaFramework::Color4 color);
+
+		void operator=(const VertexPositionColor &vertex);
 	};
 
 #endif

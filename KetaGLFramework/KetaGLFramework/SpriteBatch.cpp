@@ -10,7 +10,7 @@ namespace KetaGraphics
 	{
 	}
 
-	void SpriteBatch::Begin(BlendState blendState)
+	void SpriteBatch::Begin(const BlendState blendState)
 	{
 		glBlendFunc(blendState.SFactor, blendState.DFactor);
 		glEnable(GL_BLEND);

@@ -49,7 +49,7 @@ namespace KetaInput
 
 	KeyboardState Keyboard::currentState = KeyboardState();
 
-	KeyboardState &Keyboard::GetState()
+	const KeyboardState &Keyboard::GetState()
 	{
 		return currentState;
 	}

@@ -18,7 +18,7 @@ namespace KetaFramework
 
 		//Overloaded. Initializes a new instance of Rectangle.
 		Rectangle();
-		Rectangle(Rectangle &rect);
+		Rectangle(const Rectangle &rect);
 		Rectangle(int x, int y, int width, int height);
 	};
 

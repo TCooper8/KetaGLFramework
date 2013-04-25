@@ -19,26 +19,26 @@ namespace KetaFramework
 
 		//Creates a new instance of GameWindow.
 		GameWindow();
-		GameWindow(GameWindow &window);
+		GameWindow(const GameWindow &window);
 
 		//Handles window resizing.
 		void Resize(int width, int height);
 
 		//The screen dimensions of the game window's client rectangle.
-		Rectangle &GetClientBounds();
+		const Rectangle &GetClientBounds() const;
 		//Gets the current window handle.
 		int GetHandle() const;
 		//Sets the current window handle.
 		void SetHandle(int handle);
 		//Gets the title of the system window.
-		char* &GetTitle();
+		const char* GetTitle() const;
 		//Sets the title of the system window.
-		void SetTitle(char* title);
+		void SetTitle(const char* title);
 
 		__declspec(property( get = GetClientBounds ))
-			Rectangle ClientBounds;
+			const Rectangle ClientBounds;
 		__declspec(property( get = GetTitle, put = SetTitle))
-			char* Title;
+			const char* Title;
 	};
 
 #endif

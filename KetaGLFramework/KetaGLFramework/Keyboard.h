@@ -31,7 +31,7 @@ namespace KetaInput
 
 	public:
 		//Returns the current keyboard state.
-		static KeyboardState &GetState();
+		static const KeyboardState &GetState();
 
 		//Called when OpenGL invokes its KeyboardFunc.
 		static void KeyboardCallback(unsigned char c, int x, int y);

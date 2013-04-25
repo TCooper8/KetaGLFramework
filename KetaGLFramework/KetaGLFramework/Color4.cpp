@@ -2,19 +2,19 @@
 
 namespace KetaFramework
 {
-	Color4 Color4::Black = Color4(0, 1);
-	Color4 Color4::Blue = Color4(0, 0, 1, 1);
-	Color4 Color4::Green = Color4(0, 1, 0, 1);
-	Color4 Color4::Red = Color4(1, 0, 0, 1);
-	Color4 Color4::White = Color4(1);
+	Color4 const Color4::Black = Color4(0, 1);
+	Color4 const Color4::Blue = Color4(0, 0, 1, 1);
+	Color4 const Color4::Green = Color4(0, 1, 0, 1);
+	Color4 const Color4::Red = Color4(1, 0, 0, 1);
+	Color4 const Color4::White = Color4(1);
 
-	Color4 Color4::Empty = Color4(0);
+	Color4 const Color4::Empty = Color4(0);
 
 	Color4::Color4()
 		: R(0), G(0), B(0), A(0)
 	{ }
 
-	Color4::Color4(Color4 &color)
+	Color4::Color4(const Color4 &color)
 		: R(color.R), G(color.G), B(color.B), A(color.A)
 	{ }
 
@@ -30,7 +30,7 @@ namespace KetaFramework
 		: R(r), G(g), B(b), A(a)
 	{ }
 
-	bool Color4::operator==(Color4 &color)
+	bool Color4::operator==(const Color4 &color)
 	{
 		return
 			(A == color.A) &&
@@ -39,12 +39,12 @@ namespace KetaFramework
 			(R == color.R);
 	}
 
-	bool Color4::operator!=(Color4 &color)
+	bool Color4::operator!=(const Color4 &color)
 	{
 		return !(*this == color);
 	}
 
-	Color4 &Color4::operator=(Color4 &color)
+	Color4 &Color4::operator=(const Color4 &color)
 	{
 		A = color.A;
 		B = color.B;

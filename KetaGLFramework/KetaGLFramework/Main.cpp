@@ -15,6 +15,8 @@ public:
 	SpriteBatch spriteBatch;
 	MouseState currentMouse, previousMouse;
 
+	VertexBuffer buffer;
+
 	Game1()
 		: Game()
 	{
@@ -23,6 +25,27 @@ public:
 	virtual void Initialize(int argc, char** argv) override
 	{
 		Game::Initialize(argc, argv);
+
+		VertexPositionColor* vertices = new VertexPositionColor[4];
+		vertices[0] = VertexPositionColor(Vector3(-1, -1) * 5, Color4::Black);
+		vertices[1] = VertexPositionColor(Vector3(-1, 1) * 5, Color4::Blue);
+		vertices[2] = VertexPositionColor(Vector3(1, 1) * 5, Color4::Red);
+		vertices[3] = VertexPositionColor(Vector3(1, -1) * 5, Color4::Green);
+
+		buffer = VertexBuffer(vertices, 4, GL_QUADS);
+
+		Matrix m = Matrix::CreateLookAt(Vector3(0, 0, -10), Vector3(0), Vector3::UnitY);
+
+		cout << '[';
+		for (int x = 0; x < Matrix::Width; x++)
+		{
+			for (int y = 0; y < Matrix::Height; y++)
+			{
+				cout << m.Element[x][y] << ',';
+			}
+			cout << endl;
+		}
+		cout << ']' << endl;
 	}
 
 	virtual void Update() override
@@ -45,13 +68,12 @@ public:
 		GetGraphicsDevice().Clear(Color4::White);
 		spriteBatch.Begin(BlendState::AlphaBlend);
 
-		glColor3d(1, 0, 0);
-		glMatrixMode(GL_MODELVIEW);
+		glMatrixMode(GL_MODELVIEW);  
 		glLoadIdentity();
 		gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
 		glRotated(theta, 0, 1, 0);
-		glutWireCube(5);
-		
+
+		this->graphicsDevice.DrawPrimitives(buffer.GetDeclaration(), buffer.GetVertices(), buffer.GetCount());
 		theta += 0.01;
 
 		Game::Draw();

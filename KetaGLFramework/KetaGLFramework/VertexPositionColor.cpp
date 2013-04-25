@@ -8,11 +8,17 @@ namespace KetaGraphics
 		: Color(), Position()
 	{ }
 
-	VertexPositionColor::VertexPositionColor(VertexPositionColor &vertex)
+	VertexPositionColor::VertexPositionColor(const VertexPositionColor &vertex)
 		: Color(vertex.Color), Position(vertex.Position)
 	{ }
 
-	VertexPositionColor::VertexPositionColor(Vector3 position, Color4 color)
+	VertexPositionColor::VertexPositionColor(const Vector3 position, const Color4 color)
 		: Color(color), Position(position)
 	{ }
+
+	void VertexPositionColor::operator=(const VertexPositionColor &vertex)
+	{
+		this->Position = vertex.Position;
+		this->Color = vertex.Color;
+	}
 }

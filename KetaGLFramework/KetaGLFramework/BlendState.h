@@ -12,11 +12,11 @@ namespace KetaGraphics
 		unsigned int SFactor;
 		
 		//Represents anti-aliasing blend state.
-		static BlendState AA;
+		static const BlendState AA;
 		//Respresents an additive blend state.
-		static BlendState Additive;
+		static const BlendState Additive;
 		//Represents an alpha-blend blend state.
-		static BlendState AlphaBlend;
+		static const BlendState AlphaBlend;
 
 		//Creates an instance of the BlendState class. Default is using Additive blend.
 		BlendState();

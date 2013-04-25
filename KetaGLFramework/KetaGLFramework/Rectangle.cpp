@@ -6,7 +6,7 @@ namespace KetaFramework
 		: X(0), Y(0), Width(0), Height(0)
 	{ }
 
-	Rectangle::Rectangle(Rectangle &rect)
+	Rectangle::Rectangle(const Rectangle &rect)
 		: X(rect.X), Y(rect.Y), Width(rect.Width), Height(rect.Height)
 	{ }
 

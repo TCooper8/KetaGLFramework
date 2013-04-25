@@ -8,6 +8,7 @@
 #include "Rectangle.h"
 #include "Color4.h"
 #include "Vector3.h"
+#include "Matrix.h"
 #include "GameWindow.h"
 #include "LaunchParameters.h"
 #include "Game.h"
@@ -16,3 +17,4 @@
 #include "BlendState.h"
 #include "GraphicsDevice.h"
 #include "SpriteBatch.h"
+#include "VertexBuffer.h"

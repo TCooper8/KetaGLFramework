@@ -12,11 +12,9 @@ namespace KetaFramework
 	{
 	public:
 	protected:
-
-	private:
 		bool isActive;
 		KetaGraphics::GraphicsDevice graphicsDevice;
-		GameWindow window;	
+		GameWindow window;
 
 	public:
 		//Game pointer for redirecting OpenGL function callbacks.
