@@ -86,6 +86,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="PresentationParameters.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="SpriteBatch.cpp" />
     <ClCompile Include="Vector3.cpp" />

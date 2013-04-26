@@ -90,6 +90,9 @@
     <ClCompile Include="Matrix.cpp">
       <Filter>Header Files\Keta\KetaFramework\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PresentationParameters.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">

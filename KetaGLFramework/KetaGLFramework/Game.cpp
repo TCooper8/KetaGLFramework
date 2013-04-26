@@ -8,7 +8,7 @@ using namespace KetaGraphics;
 namespace KetaFramework
 {
 	Game::Game()
-		:isActive(true)
+		:isActive(true), graphicsDevice(PresentationParameters())
 	{
 		GameInstance = this;
 	}

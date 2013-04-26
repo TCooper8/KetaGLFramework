@@ -9,8 +9,11 @@ using namespace KetaFramework;
 
 namespace KetaGraphics
 {
-	GraphicsDevice::GraphicsDevice()
-	{ }
+	GraphicsDevice::GraphicsDevice(const PresentationParameters presentationParameters)
+		: presentationParameters(presentationParameters)
+	{ 
+
+	}
 
 	void GraphicsDevice::Clear(Color4 color)
 	{
@@ -43,5 +46,10 @@ namespace KetaGraphics
 		}
 
 		glEnd();
+	}
+
+	void GraphicsDevice::Present()
+	{
+		glutSwapBuffers();
 	}
 }

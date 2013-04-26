@@ -8,28 +8,37 @@ namespace KetaGraphics
 	//Contains information about the current device window.
 	class PresentationParameters
 	{
+	private:
+		int backBufferHeight;
+		int backBufferWidth;
+		KetaFramework::Rectangle bounds;
+		int* windowHandle;
+		bool isFullScreen;
+
 	public:
 		//Initializes a new instance of this class.
 		PresentationParameters();
+		//Copies an instance of this class.
+		PresentationParameters(const PresentationParameters &parameters);
 
 		//Gets the value representing the height of the new swap chain's back buffer.
 		const int GetBackBufferHeight() const;
 		//Sets the value representing the height of the new swap chain's back buffer.
-		void SetBackBufferHeight(const int height);
+		void SetBackBufferHeight(int height);
 		//Gets the value representing the width of the new swap chain's back buffer.
 		const int GetBackBufferWidth() const;
 		//Sets the value representing the width of the new swap chain's back buffer.
-		void SetBackBufferWidth(const int width);
+		void SetBackBufferWidth(int width);
 		//Gets the current window bounds.
-		const Rectangle &GetBounds() const;
+		const KetaFramework::Rectangle &GetBounds() const;
 		//Gets the handle to the device window.
 		const int* GetDeviceWindowHandle() const;
 		//Sets the handle to the device window.
-		void SetDeviceWindowHandle(const int* handle);
+		void SetDeviceWindowHandle(int* handle);
 		//Gets the value indicating whether the application is in full screen mode.
 		const bool GetIsFullScreen() const;
 		//Sets the value indicating whether the application is in full screen mode.
-		void SetIsFullScreen(const bool isFullScreen);
+		void SetIsFullScreen(bool isFullScreen);
 	};
 
 #endif
