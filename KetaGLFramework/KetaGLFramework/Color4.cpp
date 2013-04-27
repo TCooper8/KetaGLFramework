@@ -26,6 +26,10 @@ namespace KetaFramework
 		: R(rgb), G(rgb), B(rgb), A(a)
 	{ }
 
+	Color4::Color4(double r, double g, double b)
+		: R(r), G(g), B(b)
+	{ }
+
 	Color4::Color4(double r, double g, double b, double a)
 		: R(r), G(g), B(b), A(a)
 	{ }

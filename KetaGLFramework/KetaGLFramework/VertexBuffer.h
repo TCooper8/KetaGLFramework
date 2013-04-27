@@ -1,31 +1,34 @@
 #include "VertexPositionColor.h"
 
-namespace KetaGraphics
+namespace KetaFramework
 {
-#ifndef VertexBuffer_h
-#define VertexBuffer_h
-
-	class VertexBuffer sealed
+	namespace KetaGraphics
 	{
-	private:
-		int count;
-		int declaration;
-		VertexPositionColor* vertices;
+	#ifndef KetaFramework_KetaGraphics_VertexBuffer
+	#define KetaFramework_KetaGraphics_VertexBuffer
 
-	public:
-		VertexBuffer();
-		VertexBuffer(const VertexBuffer &buffer);
-		VertexBuffer(const VertexPositionColor* vertices, const int count, int declaration);
-		~VertexBuffer();
+		class VertexBuffer sealed
+		{
+		private:
+			int count;
+			int declaration;
+			VertexPositionColor* vertices;
 
-		const int GetCount() const;
-		const int GetDeclaration() const;
-		void SetDeclaration(int declaration);
-		const VertexPositionColor* GetVertices() const;
-		void SetVertices(const VertexPositionColor* vertices, const int count);
+		public:
+			VertexBuffer();
+			VertexBuffer(const VertexBuffer &buffer);
+			VertexBuffer(const VertexPositionColor* vertices, const int count, int declaration);
+			~VertexBuffer();
 
-		void operator=(const VertexBuffer &buffer);
-	};
+			const int GetCount() const;
+			const int GetDeclaration() const;
+			void SetDeclaration(int declaration);
+			const VertexPositionColor* GetVertices() const;
+			void SetVertices(const VertexPositionColor* vertices, const int count);
 
-#endif
+			void operator=(const VertexBuffer &buffer);
+		};
+
+	#endif
+	}
 }

@@ -1,7 +1,7 @@
 namespace KetaFramework
 {
-#ifndef Rectangle_h
-#define Rectangle_h
+#ifndef KetaFramework_Rectangle
+#define KetaFramework_Rectangle
 
 	//Defines a rectangle.
 	class Rectangle

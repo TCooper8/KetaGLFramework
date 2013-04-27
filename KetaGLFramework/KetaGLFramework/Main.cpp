@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Keta.h"
 #include <glut.h>
+#include "Keta.h"
 
 using namespace std;
 using namespace KetaFramework;
@@ -20,18 +20,6 @@ public:
 	Game1()
 		: Game()
 	{
-		Matrix m = Matrix::CreateLookAt(Vector3(1, 1, 1), Vector3(0), Vector3(0, 1, 0));
-
-		cout << '[';
-		for (int i = 0; i < Matrix::Width; i++)
-		{
-			for (int j = 0; j < Matrix::Height; j++)
-			{
-				cout << m[i + j * Matrix::Height] << ',';
-			}
-			cout << endl;
-		}
-		cout << ']' << endl;
 	}
 
 	virtual void Initialize(int argc, char** argv) override
@@ -55,11 +43,10 @@ public:
 		if(Keyboard::GetState().IsKeyDown(Keys::Escape))
 			exit(0);
 
+
 		if (previousMouse.Button == MouseState::MouseLeft && currentMouse.Button == MouseState::MouseLeft)
 			if (previousMouse.State == MouseState::Down && currentMouse.State == MouseState::Up)
 				cout << 5 << endl;
-
-		cout << SurfaceFormat::Color;
 
 		Game::Update();
 	}
@@ -69,7 +56,7 @@ public:
 		GetGraphicsDevice().Clear(Color4::White);
 		spriteBatch.Begin(BlendState::AlphaBlend);
 
-		glMatrixMode(GL_MODELVIEW);  
+		glMatrixMode(GL_MODELVIEW);
 
 		Matrix m = Matrix::CreateLookAt(Vector3(-1), Vector3(0, 0, 0), Vector3(0, 1, 0));
 		m.glPush();

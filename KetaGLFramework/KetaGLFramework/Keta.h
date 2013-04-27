@@ -14,6 +14,7 @@
 #include "Game.h"
 
 //Include KetaGraphics files
+#include "DisplayMode.h"
 #include "BlendState.h"
 #include "PresentationParameters.h"
 #include "SurfaceFormat.h"

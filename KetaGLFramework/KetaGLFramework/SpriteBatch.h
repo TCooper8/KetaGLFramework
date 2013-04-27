@@ -1,25 +1,28 @@
 #include "BlendState.h"
 
-namespace KetaGraphics
+namespace KetaFramework
 {
-#ifndef SpriteBatch_h
-#define SpriteBatch_h
-
-	//Used for interfacing with OpenGL and a GraphicsDevice at a high level.
-	class SpriteBatch sealed
+	namespace KetaGraphics
 	{
-	public:
-		//Initializes a new instance of SpriteBatch.
-		SpriteBatch();
+	#ifndef KetaFramework_KetaGraphics_SpriteBatch
+	#define KetaFramework_KetaGraphics_SpriteBatch
 
-		//Overloaded. Begins a SpriteBatch operation using default AlphaBlend.
-		void Begin();
-		//Overloaded. Beings a SpriteBatch operation using user-defined BlendState.
-		void Begin(const BlendState blendState);
-		//void Draw();
-		//Flushes the GraphicsDevice and restores the device state to how it was before Begin was called.
-		void End();
-	};
+		//Used for interfacing with OpenGL and a GraphicsDevice at a high level.
+		class SpriteBatch sealed
+		{
+		public:
+			//Initializes a new instance of SpriteBatch.
+			SpriteBatch();
 
-#endif
+			//Overloaded. Begins a SpriteBatch operation using default AlphaBlend.
+			void Begin();
+			//Overloaded. Beings a SpriteBatch operation using user-defined BlendState.
+			void Begin(const BlendState blendState);
+			//void Draw();
+			//Flushes the GraphicsDevice and restores the device state to how it was before Begin was called.
+			void End();
+		};
+
+	#endif
+	}
 }

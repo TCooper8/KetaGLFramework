@@ -3,33 +3,36 @@
 #include "VertexPositionColor.h"
 #include "PresentationParameters.h"
 
-namespace KetaGraphics
+namespace KetaFramework
 {
-#ifndef KetaGraphics_GraphicsDevice_h
-#define KetaGraphics_GraphicsDevice_h
-
-	//Performs primitive-based rendering, and handles system-level variables.
-	class GraphicsDevice sealed
+	namespace KetaGraphics
 	{
-	private:
-		KetaFramework::Color4 blendFactor;
-		BlendState currentBlendState;
-		PresentationParameters presentationParameters;
+	#ifndef KetaFramework_KetaGraphics_GraphicsDevice
+	#define KetaFramework_KetaGraphics_GraphicsDevice
 
-	public:
-		//Creates an instance of GraphicsDevice.
-		GraphicsDevice(const PresentationParameters presentationParameters);
+		//Performs primitive-based rendering, and handles system-level variables.
+		class GraphicsDevice sealed
+		{
+		private:
+			KetaFramework::Color4 blendFactor;
+			BlendState currentBlendState;
+			PresentationParameters presentationParameters;
 
-		//Clears the resource buffers.
-		void Clear(const KetaFramework::Color4 color);
+		public:
+			//Creates an instance of GraphicsDevice.
+			GraphicsDevice(const PresentationParameters presentationParameters);
 
-		//Draws a pre-defined primitive circle.
-		void DrawCircle(double x, double y, double radius);
-		//Renders geometric primitives.
-		void DrawPrimitives(int declaration, const VertexPositionColor* vertices, int vertexCount);
-		//Presents the display with the contents of the next buffer.
-		void Present();
-	};
+			//Clears the resource buffers.
+			void Clear(const KetaFramework::Color4 color);
 
-#endif
+			//Draws a pre-defined primitive circle.
+			void DrawCircle(double x, double y, double radius);
+			//Renders geometric primitives.
+			void DrawPrimitives(int declaration, const VertexPositionColor* vertices, int vertexCount);
+			//Presents the display with the contents of the next buffer.
+			void Present();
+		};
+
+	#endif
+	}
 }

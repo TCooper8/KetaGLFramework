@@ -1,7 +1,7 @@
 namespace KetaFramework
 {
-#ifndef LaunchParameters_h
-#define LaunchParameters_h
+#ifndef KetaFramework_LaunchParameters
+#define KetaFramework_LaunchParameters
 
 	//The start up parameters for launching a Keta Game.
 	class LaunchParameters

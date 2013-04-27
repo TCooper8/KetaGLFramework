@@ -1,7 +1,7 @@
 namespace KetaFramework
 {
-#ifndef Color4_h
-#define Color4_h
+#ifndef KetaFramework_Color4
+#define KetaFramework_Color4
 
 	//Represents a four component color using red, green, blue, and alpha.
 	class Color4
@@ -31,6 +31,7 @@ namespace KetaFramework
 		Color4(const Color4 &color);
 		Color4(double value);
 		Color4(double rgb, double a);
+		Color4(double r, double g, double b);
 		Color4(double r, double g, double b, double a);
 
 		bool operator==(const Color4 &color);

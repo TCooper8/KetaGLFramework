@@ -1,24 +1,25 @@
 #include "VertexPositionColor.h"
 
-using namespace KetaFramework;
-
-namespace KetaGraphics
+namespace KetaFramework
 {
-	VertexPositionColor::VertexPositionColor()
-		: Color(), Position()
-	{ }
-
-	VertexPositionColor::VertexPositionColor(const VertexPositionColor &vertex)
-		: Color(vertex.Color), Position(vertex.Position)
-	{ }
-
-	VertexPositionColor::VertexPositionColor(const Vector3 position, const Color4 color)
-		: Color(color), Position(position)
-	{ }
-
-	void VertexPositionColor::operator=(const VertexPositionColor &vertex)
+	namespace KetaGraphics
 	{
-		this->Position = vertex.Position;
-		this->Color = vertex.Color;
+		VertexPositionColor::VertexPositionColor()
+			: Color(), Position()
+		{ }
+
+		VertexPositionColor::VertexPositionColor(const VertexPositionColor &vertex)
+			: Color(vertex.Color), Position(vertex.Position)
+		{ }
+
+		VertexPositionColor::VertexPositionColor(const Vector3 position, const Color4 color)
+			: Color(color), Position(position)
+		{ }
+
+		void VertexPositionColor::operator=(const VertexPositionColor &vertex)
+		{
+			this->Position = vertex.Position;
+			this->Color = vertex.Color;
+		}
 	}
 }

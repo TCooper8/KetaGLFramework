@@ -1,5 +1,5 @@
-#include "GameWindow.h"
 #include <cstring>
+#include "GameWindow.h"
 
 namespace KetaFramework
 {

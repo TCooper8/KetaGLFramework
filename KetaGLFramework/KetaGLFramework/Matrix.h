@@ -2,8 +2,8 @@
 
 namespace KetaFramework
 {
-#ifndef Matrix_h
-#define Matrix_h
+#ifndef KetaFramework_Matrix
+#define KetaFramework_Matrix
 
 	class Matrix
 	{

@@ -4,63 +4,66 @@
 
 using namespace std;
 
-namespace KetaInput
+namespace KetaFramework
 {
-	KeyboardState::KeyboardState()
+	namespace KetaInput
 	{
-		for (int i = 0; i < 256; i++)
+		KeyboardState::KeyboardState()
 		{
-			keymap[i] = GLUT_UP;
+			for (int i = 0; i < 256; i++)
+			{
+				keymap[i] = GLUT_UP;
+			}
 		}
-	}
 
-	KeyboardState::KeyboardState(bool keys[])
-	{
-		for (int i = 0; i < 256; i++)
+		KeyboardState::KeyboardState(bool keys[])
 		{
-			keymap[i] = keys[i];
+			for (int i = 0; i < 256; i++)
+			{
+				keymap[i] = keys[i];
+			}
 		}
-	}
 
-	const bool *KeyboardState::GetKeys() const
-	{
-		return keymap;
-	}
+		const bool *KeyboardState::GetKeys() const
+		{
+			return keymap;
+		}
 
-	bool KeyboardState::IsKeyDown(unsigned char key) const
-	{
-		return keymap[key] == GLUT_DOWN;
-	}
+		bool KeyboardState::IsKeyDown(unsigned char key) const
+		{
+			return keymap[key] == GLUT_DOWN;
+		}
 
-	bool KeyboardState::IsKeyUp(unsigned char key) const
-	{
-		return keymap[key] == GLUT_UP;
-	}
+		bool KeyboardState::IsKeyUp(unsigned char key) const
+		{
+			return keymap[key] == GLUT_UP;
+		}
 
-	void KeyboardState::SetKeyDown(unsigned char key)
-	{
-		keymap[key] = GLUT_DOWN;
-	}
+		void KeyboardState::SetKeyDown(unsigned char key)
+		{
+			keymap[key] = GLUT_DOWN;
+		}
 
-	void KeyboardState::SetKeyUp(unsigned char key)
-	{
-		keymap[key] = GLUT_UP;
-	}
+		void KeyboardState::SetKeyUp(unsigned char key)
+		{
+			keymap[key] = GLUT_UP;
+		}
 
-	KeyboardState Keyboard::currentState = KeyboardState();
+		KeyboardState Keyboard::currentState = KeyboardState();
 
-	const KeyboardState &Keyboard::GetState()
-	{
-		return currentState;
-	}
+		const KeyboardState &Keyboard::GetState()
+		{
+			return currentState;
+		}
 
-	void Keyboard::KeyboardCallback(unsigned char c, int x, int y)
-	{
-		currentState.SetKeyDown(c);
-	}
+		void Keyboard::KeyboardCallback(unsigned char c, int x, int y)
+		{
+			currentState.SetKeyDown(c);
+		}
 
-	void Keyboard::KeyboardUpCallback(unsigned char c, int x, int y)
-	{
-		currentState.SetKeyUp(c);
+		void Keyboard::KeyboardUpCallback(unsigned char c, int x, int y)
+		{
+			currentState.SetKeyUp(c);
+		}
 	}
 }

@@ -2,8 +2,8 @@
 
 namespace KetaFramework
 {
-#ifndef GameWindow_h
-#define GameWindow_h
+#ifndef KetaFramework_GameWindow
+#define KetaFramework_GameWindow
 
 	//The system window associated with a Game.
 	class GameWindow

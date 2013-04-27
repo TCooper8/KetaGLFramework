@@ -93,6 +93,12 @@
     <ClCompile Include="PresentationParameters.cpp">
       <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DisplayMode.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimitiveType.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keta.h">
@@ -150,6 +156,15 @@
       <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SurfaceFormat.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\Keta\KetaFramework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayMode.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveType.h">
       <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

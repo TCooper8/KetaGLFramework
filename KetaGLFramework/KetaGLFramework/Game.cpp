@@ -3,10 +3,11 @@
 #include "Mouse.h"
 #include "Game.h"
 
-using namespace KetaGraphics;
 
 namespace KetaFramework
 {
+	using namespace KetaGraphics;
+
 	Game::Game()
 		:isActive(true), graphicsDevice(PresentationParameters())
 	{

@@ -1,7 +1,7 @@
 namespace KetaFramework
 {
-#ifndef Vector3_h
-#define Vector3_h
+#ifndef KetaFramework_Vector3
+#define KetaFramework_Vector3
 
 	//Defines a vector with three components.
 	class Vector3

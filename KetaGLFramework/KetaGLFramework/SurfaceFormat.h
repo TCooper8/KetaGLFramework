@@ -1,16 +1,19 @@
-namespace KetaGraphics
+namespace KetaFramework
 {
-#ifndef SurfaceFormat_h
-#define SurfaceFormat_h
-
-	namespace SurfaceFormat
+	namespace KetaGraphics
 	{
-		enum FormatEnum
-		{
-			Color = 0,
-			Bgr656,
-		};
-	}
+	#ifndef KetaFramework_KetaGraphics_SurfaceFormat
+	#define KetaFramework_KetaGraphics_SurfaceFormat
 
-#endif
+		namespace SurfaceFormat
+		{
+			enum FormatEnum
+			{
+				Color = 0,
+				Bgr656,
+			};
+		}
+
+	#endif
+	}
 }

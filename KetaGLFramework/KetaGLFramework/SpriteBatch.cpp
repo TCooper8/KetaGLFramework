@@ -1,24 +1,27 @@
 #include <glut.h>
 #include "SpriteBatch.h"
 
-namespace KetaGraphics
+namespace KetaFramework
 {
-	SpriteBatch::SpriteBatch()
-	{ }
-
-	void SpriteBatch::Begin()
+	namespace KetaGraphics
 	{
-	}
+		SpriteBatch::SpriteBatch()
+		{ }
 
-	void SpriteBatch::Begin(const BlendState blendState)
-	{
-		glBlendFunc(blendState.SFactor, blendState.DFactor);
-		glEnable(GL_BLEND);
-	}
+		void SpriteBatch::Begin()
+		{
+		}
 
-	void SpriteBatch::End()
-	{
-		glDisable(GL_BLEND);
-		glutSwapBuffers();
+		void SpriteBatch::Begin(const BlendState blendState)
+		{
+			glBlendFunc(blendState.SFactor, blendState.DFactor);
+			glEnable(GL_BLEND);
+		}
+
+		void SpriteBatch::End()
+		{
+			glDisable(GL_BLEND);
+			glutSwapBuffers();
+		}
 	}
 }

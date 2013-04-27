@@ -4,8 +4,8 @@
 
 namespace KetaFramework
 {
-#ifndef Game_h
-#define Game_h
+#ifndef KetaFramework_Game
+#define KetaFramework_Game
 
 	//Provides basic graphics device initialization, game logic, and rendering code.
 	class Game

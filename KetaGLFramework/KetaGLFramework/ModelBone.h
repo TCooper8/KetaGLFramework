@@ -1,7 +1,7 @@
 namespace KetaGraphics
 {
-#ifndef ModelBone_h
-#define ModelBone_h
+#ifndef KetaFramework_KetaGraphics_ModelBone
+#define KetaFramework_KetaGraphics_ModelBone
 
 	class ModelBone sealed
 	{

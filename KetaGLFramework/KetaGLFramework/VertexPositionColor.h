@@ -1,27 +1,30 @@
 #include "Vector3.h"
 #include "Color4.h"
 
-namespace KetaGraphics
+namespace KetaFramework
 {
-#ifndef VertexPositionColor_h
-#define VertexPositionColor_h
-
-	//Describes a Vertex structure format that contains position and color information.
-	class VertexPositionColor
+	namespace KetaGraphics
 	{
-	public:
-		//The vertex color.
-		KetaFramework::Color4 Color;
-		//The vertex position.
-		KetaFramework::Vector3 Position;
+	#ifndef KetaFramework_KetaGraphics_VertexPositionColor
+	#define KetaFramework_KetaGraphics_VertexPositionColor
 
-		//Overloaded. Initializes a new instance of VertexPositionColor.d
-		VertexPositionColor();
-		VertexPositionColor(const VertexPositionColor &vertex);
-		VertexPositionColor(const KetaFramework::Vector3 position, const KetaFramework::Color4 color);
+		//Describes a Vertex structure format that contains position and color information.
+		class VertexPositionColor
+		{
+		public:
+			//The vertex color.
+			Color4 Color;
+			//The vertex position.
+			Vector3 Position;
 
-		void operator=(const VertexPositionColor &vertex);
-	};
+			//Overloaded. Initializes a new instance of VertexPositionColor.d
+			VertexPositionColor();
+			VertexPositionColor(const VertexPositionColor &vertex);
+			VertexPositionColor(const Vector3 position, const Color4 color);
 
-#endif
+			void operator=(const VertexPositionColor &vertex);
+		};
+
+	#endif
+	}
 }
