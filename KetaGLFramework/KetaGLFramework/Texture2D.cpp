@@ -125,6 +125,11 @@ namespace KetaFramework
 			return this->bindingID;
 		}
 
+		void Texture2D::GetData(Color4* data, const int startIndex, const int elementCount) const
+		{
+			graphicsDevice->GetTextureData(bindingID, data, startIndex, elementCount);
+		}
+
 		const int Texture2D::GetHeight() const
 		{
 			return height;
@@ -137,10 +142,33 @@ namespace KetaFramework
 
 		void Texture2D::SetData(const Color4* data, const int width, const int height)
 		{
+			if (this->bindingID == -1)
+				bindingID = graphicsDevice->RequestTextureHandle();
+
 			this->width = width;
 			this->height = height;
 
 			graphicsDevice->SetTextureID(this->bindingID, data, width, height);
+		}
+
+		void Texture2D::SetData(const Rectangle &rect, const Color4* data)
+		{
+			Color4* newData = new Color4[rect.Width * rect.Height];
+
+			for (int x = 0; x < rect.Width || x < width; x++)
+			{
+				for (int y = 0; y < rect.Height || y < height; y++)
+				{
+					int i = x + y * rect.Width;
+					newData[i] = data[(x + rect.X) + (y + rect.Y) * rect.Width];
+				}
+			}
+			this->width = rect.Width;
+			this->height = rect.Height;
+
+			graphicsDevice->SetTextureID(this->bindingID, newData, width, height);
+
+			delete [] newData;
 		}
 	}
 }

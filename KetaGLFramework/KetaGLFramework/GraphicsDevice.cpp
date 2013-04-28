@@ -46,6 +46,31 @@ namespace KetaFramework
 			glEnd();
 		}
 
+		void GraphicsDevice::GetTextureData(const int handleID, Color4* data, const int startIndex, const int elementCount) const
+		{
+			GLubyte* byteData = new GLubyte[elementCount * 4];
+
+			glBindTexture(GL_TEXTURE_2D, handleID);
+			glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, byteData);
+
+			std::cout << startIndex << ' ' << elementCount << std::endl;
+
+			int j = startIndex;
+			for (int i = startIndex; i < startIndex + elementCount; i++)
+			{
+				Color4 color = Color4(
+					(int)byteData[j], (int)byteData[j+1],
+					(int)byteData[j+2], (int)byteData[j+3]);
+				j += 4;
+
+				data[i] = color;
+			}
+
+			std::cout << j << std::endl;
+
+			delete [] byteData;
+		}
+
 		const GLuint* GraphicsDevice::GetTextures() const
 		{
 			return this->textureIDs;
@@ -58,16 +83,16 @@ namespace KetaFramework
 
 		int GraphicsDevice::RequestTextureHandle()
 		{
-			GLuint* newIDs = new GLuint[textureCount+1];
+			textureCount += 1;
+			GLuint* newIDs = new GLuint[textureCount];
 
-			for (int i = 0; i < textureCount; i++)
+			for (int i = 0; i < textureCount - 1; i++)
 			{
 				newIDs[i] = textureIDs[i];
 			}
 
 			delete [] textureIDs;
 			textureIDs = newIDs;
-			textureCount += 1;
 
 			return textureCount-1;
 		}
@@ -85,10 +110,11 @@ namespace KetaFramework
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 
 			//Convert Color4s to propert byte data.
-			GLubyte* byteData = new GLubyte[width * height * 4];
+			int elementCount = width * height * 4;
+			GLubyte* byteData = new GLubyte[elementCount];
 
 			int j = 0;
-			for (int i = 0; i < width * height * 4; i += 4)
+			for (int i = 0; i < elementCount; i += 4)
 			{
 				const Color4 color = data[j];
 				byteData[i] = (GLubyte)color.R;

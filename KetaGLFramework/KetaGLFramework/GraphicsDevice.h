@@ -34,6 +34,10 @@ namespace KetaFramework
 			void DrawCircle(double x, double y, double radius);
 			//Renders geometric primitives.
 			void DrawPrimitives(int declaration, const VertexPositionColor* vertices, int vertexCount);
+			//Returns the texture data of a given texture id.
+			void GetTextureData(const int handleID, Color4* data, const int startIndex, const int elementCount) const;
+			//Copies image data from one texture to another.
+			void CopyTexture(const int handleIDTarget, int mipmapLevel, int xOffset, int yOffset, int x, int y, int width, int height);
 			//Returns a refernce to the OpenGL textures.
 			const GLuint* GetTextures() const;
 			//Presents the display with the contents of the next buffer.

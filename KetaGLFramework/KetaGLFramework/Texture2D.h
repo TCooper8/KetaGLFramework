@@ -24,9 +24,11 @@ namespace KetaFramework
 
 			static Texture2D FromStream(GraphicsDevice *graphicsDevice, const char* filename);
 			const int GetBinding() const;
+			void GetData(Color4* data, const int startIndex, const int elementCount) const;
 			const int GetHeight() const;
 			const int GetWidth() const;
 			void SetData(const Color4* data, const int width, const int height);
+			void SetData(const Rectangle &rect, const Color4* data);
 		};
 
 		#endif
