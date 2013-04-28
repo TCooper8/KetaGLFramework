@@ -30,7 +30,7 @@ public:
 	{
 		Game::Initialize(argc, argv);
 
-		textureShield = Content.LoadTexture("ShieldRaw.ki");
+		textureShield = Content.LoadTexture("Textures/terrain.ki");
 	}
 
 	virtual void Update() override
@@ -53,18 +53,22 @@ public:
 		GetGraphicsDevice().Clear(Color4::White);
 		spriteBatch.Begin(BlendState::AlphaBlend);
 
+		spriteBatch.Draw(textureShield, Vector3::Zero, Color4::White);
+
 		Game::Draw();
 		spriteBatch.End();
 	}
 };
 
-void LoadTextures()
+void CompileTextures()
 {
-	system("Parser.bat Content/ShieldRaw.png");
+	system("Parser.bat Content/Textures");
 }
 
 int main(int argc, char** argv)
 {
+	CompileTextures();
+
 	Game1 game1 = Game1();
 	game1.Initialize(argc, argv);
 

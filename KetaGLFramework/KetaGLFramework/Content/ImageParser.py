@@ -1,19 +1,10 @@
 import sys, os
 import pygame
 
+fileExtensions = [ ".png" ]
 outfileExtension = ".ki"
 
-def getOutfile(filepath, extension):
-    outFilepath = filepath[:filepath.find(".png")] + extension
-    return outFilepath
-
-def main(filepath):
-    outFilepath = getOutfile(filepath, outfileExtension)
-
-    print >>sys.stdout, "Writing to %s." % outFilepath
-    fout = open(outFilepath, "w")
-
-    #surface = pygame.surface( (10, 10) )
+def parseFile(filepath, fout):
     image = pygame.image.load(filepath)
     imageString = pygame.image.tostring(image, "RGBA", False)
     chunksize = 4
@@ -31,7 +22,41 @@ def main(filepath):
 
             print >>fout, "\t<color>", R, G, B, A, "</color>"
     print >>fout, "</image>"
+    
 
-    fout.close()
+def getOutfile(filepath, extension):
+    outFilepath = filepath[:filepath.find(extension)] + outfileExtension
+    return outFilepath
+
+def main(filepath):
+    isDir = os.path.isdir(filepath)
+    filenameList = []
+
+    if not isDir:
+        if not os.path.isfile(filepath):
+            print >>sys.stderr, "Error : File path not valid directory or file."
+        else:
+            filenameList.append(filepath)
+    else:
+        filenameList = os.listdir(filepath)
+
+    for filename in filenameList:
+        extension = filename[filename.rfind('.'):]
+        if extension not in fileExtensions:
+            continue
+        
+        fileout = os.path.join(filepath, getOutfile(filename, extension))
+        currentFilepath = os.path.join(filepath, filename)
+
+        if os.path.isfile(fileout):
+            print "%s already exists, skipping compile." % fileout
+            continue
+        
+        print "Writing to %s." % currentFilepath
+        fout = open(fileout, "w")
+        parseFile(currentFilepath, fout)
+        fout.close()
+        
+    return
 
 main(sys.argv[1])
