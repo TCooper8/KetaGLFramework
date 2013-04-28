@@ -1,0 +1,1 @@
+C:\Python27\python.exe C:\Users\Cooper\Documents\GitHub\KetaGLFramework\KetaGLFramework\KetaGLFramework\Content\ImageParser.py %*

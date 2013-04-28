@@ -2,11 +2,11 @@
 
 namespace KetaFramework
 {
-	Color4 const Color4::Black = Color4(0, 1);
-	Color4 const Color4::Blue = Color4(0, 0, 1, 1);
-	Color4 const Color4::Green = Color4(0, 1, 0, 1);
-	Color4 const Color4::Red = Color4(1, 0, 0, 1);
-	Color4 const Color4::White = Color4(1);
+	Color4 const Color4::Black = Color4(0, 255);
+	Color4 const Color4::Blue = Color4(0, 0, 255, 255);
+	Color4 const Color4::Green = Color4(0, 255, 0, 255);
+	Color4 const Color4::Red = Color4(255, 0, 0, 255);
+	Color4 const Color4::White = Color4(255);
 
 	Color4 const Color4::Empty = Color4(0);
 
@@ -18,19 +18,19 @@ namespace KetaFramework
 		: R(color.R), G(color.G), B(color.B), A(color.A)
 	{ }
 
-	Color4::Color4(double value)
+	Color4::Color4(int value)
 		: R(value), G(value), B(value), A(value)
 	{ }
 
-	Color4::Color4(double rgb, double a)
+	Color4::Color4(int rgb, int a)
 		: R(rgb), G(rgb), B(rgb), A(a)
 	{ }
 
-	Color4::Color4(double r, double g, double b)
+	Color4::Color4(int r, int g, int b)
 		: R(r), G(g), B(b)
 	{ }
 
-	Color4::Color4(double r, double g, double b, double a)
+	Color4::Color4(int r, int g, int b, int a)
 		: R(r), G(g), B(b), A(a)
 	{ }
 

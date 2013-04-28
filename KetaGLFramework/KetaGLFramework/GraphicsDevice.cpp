@@ -8,7 +8,7 @@ namespace KetaFramework
 	namespace KetaGraphics
 	{
 		GraphicsDevice::GraphicsDevice(const PresentationParameters presentationParameters)
-			: presentationParameters(presentationParameters)
+			: presentationParameters(presentationParameters), textureCount(0), textureIDs(0)
 		{ 
 
 		}
@@ -46,9 +46,62 @@ namespace KetaFramework
 			glEnd();
 		}
 
+		const GLuint* GraphicsDevice::GetTextures() const
+		{
+			return this->textureIDs;
+		}
+
 		void GraphicsDevice::Present()
 		{
 			glutSwapBuffers();
+		}
+
+		int GraphicsDevice::RequestTextureHandle()
+		{
+			GLuint* newIDs = new GLuint[textureCount+1];
+
+			for (int i = 0; i < textureCount; i++)
+			{
+				newIDs[i] = textureIDs[i];
+			}
+
+			delete [] textureIDs;
+			textureIDs = newIDs;
+			textureCount += 1;
+
+			return textureCount-1;
+		}
+
+		void GraphicsDevice::SetTextureID(const int handleID, const Color4* data, const int width, const int height)
+		{
+			glGenTextures(1, &textureIDs[handleID]);
+			glBindTexture(GL_TEXTURE_2D, handleID);
+			glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+
+			//Set Texture2D parameters in OpenGL.
+			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+
+			//Convert Color4s to propert byte data.
+			GLubyte* byteData = new GLubyte[width * height * 4];
+
+			int j = 0;
+			for (int i = 0; i < width * height * 4; i += 4)
+			{
+				const Color4 color = data[j];
+				byteData[i] = (GLubyte)color.R;
+				byteData[i+1] = (GLubyte)color.G;
+				byteData[i+2] = (GLubyte)color.B;
+				byteData[i+3] = (GLubyte)color.A;
+
+				j++;
+			}
+
+			//Build2D mipmaps in OpenGL.
+			gluBuild2DMipmaps(GL_TEXTURE_2D, 4, width, height, GL_RGBA, GL_UNSIGNED_BYTE, byteData);
+			delete [] byteData;
 		}
 	}
 }

@@ -43,6 +43,24 @@
     <Filter Include="Header Files\Keta\KetaInput\Header Files">
       <UniqueIdentifier>{c84a0deb-0c0a-4165-9d8b-3f9545cee00b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Keta\KetaContent">
+      <UniqueIdentifier>{60632113-8f21-46fa-9f12-5972b950cf54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaContent\Header Files">
+      <UniqueIdentifier>{d477ff2f-5c03-4028-8f49-13730db8bb4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaContent\Source Files">
+      <UniqueIdentifier>{729df510-1006-49aa-8bbb-37fe30bbf6c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaComponents">
+      <UniqueIdentifier>{5105d214-e4c1-4eb7-b30b-9f3405db7a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaComponents\Header Files">
+      <UniqueIdentifier>{58921e41-c7d9-4041-8b77-1bb6dd31557f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Keta\KetaComponents\Source Files">
+      <UniqueIdentifier>{1ac11761-a2aa-47e3-9a01-e3fb24d552d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -97,6 +115,12 @@
       <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PrimitiveType.cpp">
+      <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentManager.cpp">
+      <Filter>Header Files\Keta\KetaContent\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture2D.cpp">
       <Filter>Header Files\Keta\KetaGraphics\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -166,6 +190,15 @@
     </ClInclude>
     <ClInclude Include="PrimitiveType.h">
       <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture2D.h">
+      <Filter>Header Files\Keta\KetaGraphics\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentManager.h">
+      <Filter>Header Files\Keta\KetaContent\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KetaSystem.h">
+      <Filter>Header Files\Keta</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

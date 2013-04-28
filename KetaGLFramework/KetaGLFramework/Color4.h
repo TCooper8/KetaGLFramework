@@ -8,13 +8,13 @@ namespace KetaFramework
 	{
 	public:
 		//Represents the alpha component value of this Color.
-		double A;
+		int A;
 		//Represents the blue component value of this Color.
-		double B;
+		int B;
 		//Represents the green component value of this Color.
-		double G;
+		int G;
 		//Represents the red component value of this Color.
-		double R;
+		int R;
 		
 		//System defined color.
 		static const Color4 Black;
@@ -29,10 +29,10 @@ namespace KetaFramework
 		//Creates a new instance of class Color4
 		Color4();
 		Color4(const Color4 &color);
-		Color4(double value);
-		Color4(double rgb, double a);
-		Color4(double r, double g, double b);
-		Color4(double r, double g, double b, double a);
+		Color4(int value);
+		Color4(int rgb, int a);
+		Color4(int r, int g, int b);
+		Color4(int r, int g, int b, int a);
 
 		bool operator==(const Color4 &color);
 		bool operator!=(const Color4 &color);

@@ -1,4 +1,5 @@
 
+
 //Include KetaInput files
 #include "Keyboard.h"
 #include "Keys.h"
@@ -13,11 +14,15 @@
 #include "LaunchParameters.h"
 #include "Game.h"
 
+
 //Include KetaGraphics files
+#include "ContentManager.h"
+#include "Texture2D.h"
+#include "SpriteBatch.h"
 #include "DisplayMode.h"
 #include "BlendState.h"
 #include "PresentationParameters.h"
 #include "SurfaceFormat.h"
 #include "GraphicsDevice.h"
-#include "SpriteBatch.h"
 #include "VertexBuffer.h"
+

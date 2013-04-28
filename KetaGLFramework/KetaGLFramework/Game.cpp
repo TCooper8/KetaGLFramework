@@ -86,10 +86,12 @@ namespace KetaFramework
 
 		glViewport(0, 0, width, height);
 
-		glMatrixMode(Parameters.MatrixMode);
+		//glMatrixMode(Parameters.MatrixMode);
+		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-		//gluOrtho2D(0, width, 0, height);
-		glOrtho(-10, 10, -10, 10, -10, 50);
+		glOrtho(0, width, 0, height, -1.0, 1.0);
+		//glOrtho(-10, 10, -10, 10, -10, 50);
+		glMatrixMode(GL_MODELVIEW);
 	}
 
 	void Game::Update()

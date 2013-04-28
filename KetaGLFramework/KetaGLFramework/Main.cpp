@@ -6,19 +6,23 @@ using namespace std;
 using namespace KetaFramework;
 using namespace KetaGraphics;
 using namespace KetaInput;
+using namespace KetaContent;
 
 double theta = 0;
 
 class Game1 : public Game
 {
 public:
+	ContentManager Content;
 	SpriteBatch spriteBatch;
 	MouseState currentMouse, previousMouse;
 
 	VertexBuffer buffer;
 
+	Texture2D textureShield;
+
 	Game1()
-		: Game()
+		: Game(), Content(&graphicsDevice, "Content/")
 	{
 	}
 
@@ -26,13 +30,7 @@ public:
 	{
 		Game::Initialize(argc, argv);
 
-		VertexPositionColor* vertices = new VertexPositionColor[4];
-		vertices[0] = VertexPositionColor(Vector3(-1, -1) * 5, Color4::Black);
-		vertices[1] = VertexPositionColor(Vector3(-1, 1) * 5, Color4::Blue);
-		vertices[2] = VertexPositionColor(Vector3(1, 1) * 5, Color4::Red);
-		vertices[3] = VertexPositionColor(Vector3(1, -1) * 5, Color4::Green);
-
-		buffer = VertexBuffer(vertices, 4, GL_QUADS);
+		textureShield = Content.LoadTexture("ShieldRaw.ki");
 	}
 
 	virtual void Update() override
@@ -42,7 +40,6 @@ public:
 
 		if(Keyboard::GetState().IsKeyDown(Keys::Escape))
 			exit(0);
-
 
 		if (previousMouse.Button == MouseState::MouseLeft && currentMouse.Button == MouseState::MouseLeft)
 			if (previousMouse.State == MouseState::Down && currentMouse.State == MouseState::Up)
@@ -56,23 +53,15 @@ public:
 		GetGraphicsDevice().Clear(Color4::White);
 		spriteBatch.Begin(BlendState::AlphaBlend);
 
-		glMatrixMode(GL_MODELVIEW);
-
-		Matrix m = Matrix::CreateLookAt(Vector3(-1), Vector3(0, 0, 0), Vector3(0, 1, 0));
-		m.glPush();
-
-		//glLoadIdentity();
-		//gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
-
-		glRotated(theta, 0, 1, 0);
-
-		this->graphicsDevice.DrawPrimitives(buffer.GetDeclaration(), buffer.GetVertices(), buffer.GetCount());
-		theta += 0.01;
-
 		Game::Draw();
 		spriteBatch.End();
 	}
 };
+
+void LoadTextures()
+{
+	system("Parser.bat Content/ShieldRaw.png");
+}
 
 int main(int argc, char** argv)
 {

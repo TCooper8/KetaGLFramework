@@ -1,3 +1,4 @@
+#include "Texture2D.h"
 #include "BlendState.h"
 
 namespace KetaFramework
@@ -18,7 +19,8 @@ namespace KetaFramework
 			void Begin();
 			//Overloaded. Beings a SpriteBatch operation using user-defined BlendState.
 			void Begin(const BlendState blendState);
-			//void Draw();
+			//Overloaded. Draws a specified texture to the buffer.
+			void Draw(const Texture2D &texture, const Vector3 &position, const Color4 &color);
 			//Flushes the GraphicsDevice and restores the device state to how it was before Begin was called.
 			void End();
 		};
